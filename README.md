@@ -1,11 +1,8 @@
 # TODO
 
-0. Update github url to point to the github classroom repo.
-1. Update link to git hub repo to point to git hub classroom.  This should be a solo assignment.
 3. Update 'cse141s219' to reflect setting for current quarter.
 4. Verify that 'launch-141' still works.
 6. Update the name of the command campus provides us.
-9. Setup lab assigment on gradescope
 
 # Introduction to the Development Environment
 
@@ -266,7 +263,12 @@ You can now proceed to clone the git repo as described below.
 
 ### Get a Copy of the Starter Code
 
-First, accept the assignement on Github Classroom: https://classroom.github.com/a/XwRB7jHX **TODO**
+First, accept the assignement on Github Classroom:
+
+* Section A (Monday): https://classroom.github.com/a/IjkqbBTv
+
+* Section B (Wednesday): https://classroom.github.com/a/-VPj3rda
+
 
 This will set you up with a copy of the starter repository.
 
