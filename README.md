@@ -148,7 +148,7 @@ One thing to keep in mind:  The docker image large (~9GB) and you'll need to dev
 8.  Go to `Settings->Storage`, click the '+' disk icon to add an optical drive.  Then `Add` and select the iso image above.  Click 'ok'.
 9.  Click 'start' -- your VM should boot.
 10. Click 'Install Ubuntu' and accept all the defaults.
-    - If you are unable to see the buttons due to the screen being too small, you can press and hold <Alt> in windows then click the mouse to move the screen around.
+    - If you are unable to see the buttons due to the screen being too small, you can press and hold *Alt* in windows then click the mouse to move the screen around.
 11. Restart the VM when asked.
 12. When it comes back, right click->Terminal.
 13. Install docker with `sudo apt-get install docker.io`.
