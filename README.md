@@ -169,6 +169,10 @@ Options:
 ...
 ```
 
+#### Use Docker for Windows (on Windows if you don't have Intel VT-X or AMD-V support)
+
+Follow directions here: https://docs.docker.com/docker-for-windows/
+
 ### Start a Docker Container
 
 This only applies if you are running docker on your own machine (i.e., not on ieng6).  If you are running on ieng6, then you should skip this.
