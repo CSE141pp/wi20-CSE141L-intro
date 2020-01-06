@@ -227,7 +227,7 @@ to tweak the command to suit you needs.
 
 ### Testing Your Docker Container
 
-ONce you are in a docker container, you can test it by running:
+Once you are in a docker container, you can test it by running:
 
 ```
 runlab --help
@@ -421,7 +421,7 @@ and energy.
 
 The first contains the `stdout` and `stderr` of your code.
 
-Then, thene are several sections that represent different parts of the
+Then, there are several sections that represent different parts of the
 assignment.  Each of them has a score associated with it, but many of
 them are labeled "0.0/0.0".  This means the box just contains some
 information is not a graded part of the assignment.
