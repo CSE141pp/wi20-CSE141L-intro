@@ -1,9 +1,3 @@
-# TODO
-
-3. Update 'cse141s219' to reflect setting for current quarter.
-4. Verify that 'launch-141' still works.
-6. Update the name of the command campus provides us.
-
 # Introduction to the Development Environment
 
 In this lab you will set up the lab environment and learn how gather
@@ -36,10 +30,15 @@ Commit and push the modified file.
 
 1. A computer with Docker installed (either the basement CSE labs, or your own laptop).
 
-2. The lab for the [github classroom assignment for this lab](**TODO
-https://github.com/CSE141pp/wi20 wi20-CSE141L-intro.git**) for this
-lab (Don't clone it until the start of class, last minute changes are
-likely).
+2. The lab for the github classroom assignment for this lab:
+
+* Section A (Monday): https://classroom.github.com/a/IjkqbBTv
+
+* Section B (Wednesday): https://classroom.github.com/a/-VPj3rda
+
+**Note** Starting early on the lab is a form of cheating.  If you are
+  in Section B, don't click on the Section A link.  If you do by
+  accident, let us know immediately.
 
 ## Tasks to Perform
 
@@ -153,7 +152,7 @@ One thing to keep in mind:  The docker image large (~9GB) and you'll need to dev
 12. When it comes back, right click->Terminal.
 13. Install docker with `sudo apt-get install docker.io`.
 14. Follow these instructions to install the "Guest Additions": https://www.virtualbox.org/manual/ch04.html#additional-linux-install.  This will make working with the VM easier.
-    <TODO> add directions for running it without having to run sudo
+    <**TODO**> add directions for running it without having to run sudo
 
 Type `docker --help ` at the command line.  It should printout some usage information:
 
@@ -183,7 +182,7 @@ It may take a while the first time (the docker image is about 9GB), but you shou
 
 1. Always commit and push your code to github and re-clone it when you start docker.
 
-2. Use the campus-provider docker facilities in which case **TODO**
+2. Use the campus-provider docker facilities in which case you should also commit your work frequently.  Don't rely on the data on those machines being persistent.
 
 3. Use the `--volume` option to give your docker container access to the files from outside of docker.
 
@@ -317,7 +316,7 @@ git push
 Open up `code.cpp`.  The function `greet()' takes two arguments, a name and a
 salutation (e.g., "Hello", "Good morning").
 
-Modify the function to output "<salutation>, <name>!" using those variables (e.g., "Hello, Maria!") instead of "Hello, world!".
+Modify the function to output "<salutation>, <name>!" using those variables (e.g., "Hello, Ada!") instead of "Hello, world!".
 
 It's C++, so you should use `std::cout` and the `<<` opererator.
 
