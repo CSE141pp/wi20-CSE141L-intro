@@ -266,16 +266,11 @@ You can now proceed to clone the git repo as described below.
 
 ### Get a Copy of the Starter Code
 
-First, accept the assignement on Github Classroom:
-
-* Section A (Monday): https://classroom.github.com/a/IjkqbBTv
-
-* Section B (Wednesday): https://classroom.github.com/a/-VPj3rda
-
+First, accept the assignement on Github Classroom.  See the links at the top of the lab.
 
 This will set you up with a copy of the starter repository.
 
-`git clone` your repo locally.
+Use `git clone` to clone your repo locally.
 
 There are a few files:
 
