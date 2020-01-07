@@ -196,6 +196,7 @@ Once that's done, you should be able to run `docker` in the terminal.
 
 One thing to keep in mind:  The docker image large (~9GB) and you'll need to devote at least 2GB of DRAM to it.
 
+
 #### Run Docker on Your Windows Machine
 
 It is possible to run Docker on Windows, but we've had many issues
@@ -203,6 +204,59 @@ with, and we don't support it.  The lab staff is not able to assist
 with getting docker running under windows.
 
 One thing to keep in mind:  The docker image large (~9GB) and you'll need to devote at least 2GB of DRAM to it.
+
+Here is a short tutorial to help you install Docker on Windows 10. Here is a link to the same guide with visuals.
+http://www.piazza.com/class_profile/get_resource/k4rct0mauar3/k546qnrbrzn1zg
+
+1.  Install Windows 10 Pro or Education
+    - If you have Windows 10 Pro or Education, continue to step 2. If you do not have Windows 10 Pro or Education, follow the steps below.
+    - Follow the link below to get a free license for Windows 10 Education. You will have to make an account in order to get the free code. You must use your UCSD email.
+[https://ucsd.onthehub.com/WebStore/OfferingDetails.aspx?o=9b3bfdc0-71e9-e611-9425-b8ca3a5db7a1](https://ucsd.onthehub.com/WebStore/OfferingDetails.aspx?o=9b3bfdc0-71e9-e611-9425-b8ca3a5db7a1)
+    - Go to your windows 10 settings -> Update & Security -> Activation -> Change Product Key. Copy and paste your free key and install Windows
+2.  Install Docker Desktop
+    - Follow this link to download the docker desktop installer. You will need to create an account. Please do not install docker toolbox.
+[https://hub.docker.com/?overlay=onboarding](https://hub.docker.com/?overlay=onboarding)
+    - Run the installer and if it asks to enable hyper-v after it installs say yes. Your computer may need to restart.
+    - Upon restarting, run docker desktop. You’ll know docker has started when the icon in your system tray stops animating.
+    - Right click the docker icon and go to settings -> shared drives and click the checkbox next to the drive you wish to keep your labs on. You will need to enter your account password.
+3.  Test your install
+Open powershell and run the command:
+```
+docker run hello-world
+```
+Your output should look like this. (You may have extra text pulling the hello-world image)
+```
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+4. To start docker into the development environment for the labs
+Run the command replacing the bold parts:
+```
+docker run -it --volume "Directory to your lab folder":/runner/"Your lab folder name" stevenjswanson/cse141pp:latest
+```
+
+Change directories to land where your files should be.
+```
+cd ../runner
+```
 
 #### Use VirtualBox to Run Linux (on Mac or Windows if you have Intel VT-X or AMD-V support)
 
