@@ -77,34 +77,103 @@ you can use to get access to a machine running docker.
 
 This is the official way to use the class infrastructure.  If you have trouble getting any of the other options to work, use this.
 
-**TODO** UPDATE 
-
 Login to 'ieng6.ucsd.edu' (our primary student Linux SSH server) using you normal student login.
 
-Run the command `cse141s219` to prep the system. **TODO**
+Run the command `launch-141` to connect to a remote Docker container running the development environment image.
 
-Run the command `launch-141` to connect to a remote Docker container running the development environment image. **TODO**
+Here's a transcript of the login process for user `cs141lwi20zz`:
 
-After logging into ieng6 it should look something like this  **TODO**:
 ```
-    [...]
-    To begin work for one of your courses [ cs141s219 ], type its name 
-    at the command prompt.  (For example, "cs141s219", without the quotes).
+$ ssh cs141lwi20zz@ieng6.ucsd.edu
+Password:
+Attempting to create directory /home/linux/ieng6/cs141lwi20/cs141lwi20zz/perl5
+============================ NOTICE =================================
+Authorized use of this system is limited to password-authenticated
+usernames which are issued to individuals and are for the sole use of
+the person to whom they are issued.
 
-    To see all available software packages, type "prep -l" at the command prompt,
-    or "prep -h" for more options.
-    [agt@ieng6-202]:~:462$ cs141s219
-    Wed Aug 07, 2019 11:46am - Prepping cs141s219
-    [agt@ieng6-202]:~:19$ launch-141
-    Attempting to create job ('pod') with 4 CPU cores, 16 GB RAM, and 0 GPU units.
-       (Adjust command line options, or edit "/home/linux/ieng6/cs141s219/public/bin/launch-141" to change this configuration.)
-    pod "agt-21229" created
-    Wed Aug 7 11:46:19 PDT 2019 starting up - pod status: Pending ; 
-    Wed Aug 7 11:46:25 PDT 2019 pod is running with IP: 10.47.192.3 on node: its-dsmlp-n25.ucsd.edu
-    ucsdnvsl/cse141pp:latest is now active.
+Privacy notice: be aware that computer files, electronic mail and
+accounts are not private in an absolute sense.  For a statement of
+"ETS (formerly ACMS) Acceptable Use Policies" please see our webpage
+at http://acms.ucsd.edu/info/aup.html.
 
-    Connected to agt-21229; type 'exit' to terminate pod/processes.
-    agt@agt-21229:~$ 
+=====================================================================
+
+Disk quotas for user cs141lwi20zz (uid 28804):
+     Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
+     172.17.65.194:/vol/home/linux/ieng6
+                          52  204800  204800              25    4000    4000
+
+------------------------------------------------------
+
+Account check:  http://acms.ucsd.edu-> Account Lookup
+
+* Remotix download/installation: tritoned.ucsd.edu
+* How to access campus licensed software:
+        http://blink.ucsd.edu/faculty/instruction/tritoned/students.html#Download-Course-Software
+
+/*---------------------
+        Available remote ieng6-XXX hosts to connect:
+
+        * ieng6-240, ieng6-241, ieng6-242, ieng6-243, ieng6-244, ieng6-245
+	* ieng6-246, ieng6-247, ieng6-248, ieng6-249, ieng6-640, ieng6-700
+	* ieng6-701, ieng6-702
+
+*ECE* students, please check with your TA or instructor on which hosts
+you can run your projects.
+
+--------------------------*/
+
+Tue Jan 07, 2020 10:12am - Prepping cs141lwi20
+[cs141lwi20zz@ieng6-201]:~:1$ launch-141
+Attempting to create job ('pod') with 4 CPU cores, 16 GB RAM, and 0 GPU units.
+   (Adjust command line options, or edit "/home/linux/ieng6/cs141lwi20/public/bin/launch-141" to change this configuration.)
+   pod/cs141lwi20zz-10005 created
+   Tue Jan 7 10:12:31 PST 2020 starting up - pod status: Pending ; containers with incomplete status: [init-support]
+   Tue Jan 7 10:12:36 PST 2020 pod is running with IP: 10.47.0.7 on node: its-dsmlp-n05.ucsd.edu
+   ucsdnvsl/cse141pp:latest is now active.
+
+Connected to cs141lwi20zz-10005; type 'exit' to terminate pod/processes.
+/course/CSE141pp-Config /home/linux/dsmlp/04/804/cs141lwi20zz
+cat: /course/CSE141pp-Config/secrets/packet_auth_token: No such file or directory
+Welcome to the archlab development environment!
+STUDENT_MODE enabled
+THIS_DOCKER_IMAGE=ucsdnvsl/cse141pp:wi19.61
+IN_DEPLOYMENT=DEPLOYED
+CLOUD_MODE=CLOUD
+/home/linux/dsmlp/04/804/cs141lwi20zz
+cs141lwi20zz@cs141lwi20zz-10005:~$
+```
+
+To make sure everything is working, you can run `runlab --help`.  You should get this:
+
+```
+cs141lwi20zz@cs141lwi20zz-10005:~$ runlab --help
+usage: runlab [-h] [-v] [--pristine] [--info [INFO]] [--no-validate] ...
+
+Run a Lab
+
+    Running the lab with this command ensure that your compilation and
+    execution enviroment matches the autograder's as closely as possible.
+
+    Useful options include:
+
+    * '--no-validate' to run your code without committing it.
+    * '--info' to see the parameters for the current lab.
+    * '--pristine' to (as near as possible) exactly mimic how the autograder runs code.
+
+positional arguments:
+  command        Command to run (optional). By default, it'll run the command
+                 in lab.py.
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --verbose  Be verbose
+  --pristine     Clone a new copy of the reference repo.
+  --info [INFO]  Print information about this lab an exit. With an argument
+                 print that field of lab structure.
+  --no-validate  Don't check for erroneously edited files.
+cs141lwi20zz@cs141lwi20zz-10005:~$
 ```
 
 If you go this route, you can skip instructions below regarding running `docker` directly.
@@ -152,7 +221,7 @@ One thing to keep in mind:  The docker image large (~9GB) and you'll need to dev
 12. When it comes back, right click->Terminal.
 13. Install docker with `sudo apt-get install docker.io`.
 14. Follow these instructions to install the "Guest Additions": https://www.virtualbox.org/manual/ch04.html#additional-linux-install.  This will make working with the VM easier.
-    <**TODO**> add directions for running it without having to run sudo
+   
 
 Type `docker --help ` at the command line.  It should printout some usage information:
 
