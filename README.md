@@ -1,6 +1,6 @@
 # Introduction to the Development Environment
 
-In this lab you will set up the lab environment and learn how gather
+In this lab you will set up the lab environment and learn how to gather
 information about programs using the course tools.  You will download
 some starter code, build and run it in a Docker container, modify the
 code and push the changes to a git repo.  Run the code in the cloud on
